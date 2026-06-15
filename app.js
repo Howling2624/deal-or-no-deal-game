@@ -562,6 +562,7 @@ function renderNameScreen() {
       <form class="name-card" data-form="name">
         <h2>创建本地档案</h2>
         <p>名字会用于结算、历史记录和本地榜单。存档保存在当前浏览器。</p>
+        ${renderHowToPlay("intro")}
         <label class="field">
           <span>玩家名</span>
           <input name="playerName" maxlength="12" minlength="2" autocomplete="off" placeholder="2-12 个中文、英文或数字" required />
@@ -589,6 +590,7 @@ function renderLobby() {
           ${renderMetric("历史最高连胜", profile.bestWinStreak)}
           ${renderMetric("历史最高连亏", profile.bestLoseStreak)}
         </div>
+        ${renderHowToPlay("lobby")}
         <div class="button-row">
           <button class="btn btn-primary" data-action="start">${icon("play")}开始新局</button>
           <button class="btn btn-quiet" data-action="reset">${icon("reset")}重置存档</button>
@@ -598,6 +600,25 @@ function renderLobby() {
         ${renderTabs()}
         ${renderLobbyTab()}
       </div>
+    </section>
+  `;
+}
+
+function renderHowToPlay(variant = "lobby") {
+  const compact = variant === "intro";
+  return `
+    <section class="howto ${compact ? "compact" : ""}" aria-label="玩法说明">
+      <div class="howto-head">
+        <span class="phase-badge">玩法说明</span>
+        <strong>${compact ? "30 秒看懂" : "一局怎么赢"}</strong>
+      </div>
+      <ol class="rule-list">
+        <li><span>1</span><p>先从 27 个箱子里留下 1 个作为你的箱子，里面金额暂时保密。</p></li>
+        <li><span>2</span><p>每轮打开一些别的箱子；开出的金额会从奖池里排除。</p></li>
+        <li><span>3</span><p>交易人会按剩余未知金额出价：Deal 拿钱结束，No Deal 继续开箱。</p></li>
+        <li><span>4</span><p>如果一路 No Deal 到最后，你会获得最开始留下那只箱子的真实金额。</p></li>
+      </ol>
+      <p class="rule-note">每局门槛费 ${formatMoney(ENTRY_FEE)}，本局净收益 = 获得金额 - 门槛费。</p>
     </section>
   `;
 }

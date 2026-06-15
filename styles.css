@@ -429,6 +429,74 @@ button {
   margin: 16px 0;
 }
 
+.howto {
+  margin: 18px 0;
+  padding: 14px 0 2px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.howto.compact {
+  margin: 20px 0 4px;
+}
+
+.howto-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+.howto-head strong {
+  color: #f1e5c8;
+  font-size: 0.96rem;
+}
+
+.rule-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rule;
+}
+
+.rule-list li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: start;
+  min-width: 0;
+}
+
+.rule-list span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: #24190d;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.rule-list p,
+.rule-note {
+  margin: 0;
+  color: #d8c8a6;
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
+.rule-note {
+  margin: 12px 0 10px;
+  padding-left: 38px;
+  color: var(--gold-bright);
+}
+
 .metric {
   min-height: 78px;
   padding: 12px;
