@@ -1,7 +1,7 @@
 "use strict";
 
 const STORAGE_KEY = "box_acquisition_save_v2";
-const ENTRY_FEE = 50000;
+const ENTRY_FEE = 150000;
 const TARGET_MONEY = 10000000;
 const AMOUNTS = [
   1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000,
